@@ -1,22 +1,82 @@
-body{
-    background-color: #E3D7D4;
+#not-a-selector{
+    color:#008000;
+    color:#ADAAAA;
+    
 }
-h1{
-    color: #CF4F48;
+*{ /* IDK why this doesn't affect my classes - perhaps my css reset has a higher specificity default font? */
+    font-family: 'Roboto Mono', monospace;
+    Font-weight: normal, 700;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #E1D7D4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#header-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+#main-header{
+    font-family: 'Rubik', sans-serif;
+    color: #E34E45;
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 30px;
+}
+#sub-header{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+#table-box{
+    display: flex;
+    flex-direction: row;
+    flex-basis: content;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: 20px;
+    flex-wrap: wrap;
+    background-color:  #EEE;
+    justify-content: space-around;
+    align-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    max-width: 450px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.circle{
+    font-family: 'Roboto Mono', monospace;
+    Font-weight: normal, 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #CCC;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    color: #ADAAAA;
+    margin: 10px;
+}
+#form{
+    /* display: none; */
 }
 /*
-Font family: Roboto Mono (body), Rubik (headers)
-Font-weight: normal, 700
-Icons: Material Icons
-
-colors:
-#008000
-#ADAAAA
-#CCC
-#E34E45
-#EEE
-#E1D7D4
-
 CSS effects:
 Form box-shadow: box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
 - Save button box-shadow: box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
