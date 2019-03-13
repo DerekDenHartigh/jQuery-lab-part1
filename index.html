@@ -34,11 +34,11 @@
     </div>
     <form id="form">
         <h1 id="form-main-header">New Reservation</h1>
-        <h2 id="form-sub-header">Table Number: ____</h2>
-        <input type="text" placeholder="Your Name"/>
-        <input type="number" placeholder="555-555-5555"/>
-        for how many?
-        <select>
+        <h2 id="form-sub-header">Table Number: __</h2>
+        <input class="input" id="name-input" type="text" placeholder="Your Name"/>
+        <input class="input" id="phone-number-input" type="number" placeholder="555-555-5555" maxlength="12"/>
+        <select class="input" id="guest-number-input">
+            <option value="1">Select your number of guests</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -50,6 +50,7 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
+        <input class="input" id="save-button" type="submit" value="Save"> 
     </form>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

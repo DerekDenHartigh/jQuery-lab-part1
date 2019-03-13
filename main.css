@@ -1,5 +1,4 @@
 #not-a-selector{
-    color:#008000;
     color:#ADAAAA;
     
 }
@@ -26,6 +25,7 @@ body{
     align-content: center;
     text-align: center;
     justify-content: center;
+    margin: 50px 0;
 }
 #main-header{
     font-family: 'Rubik', sans-serif;
@@ -74,10 +74,63 @@ body{
     margin: 10px;
 }
 #form{
-    /* display: none; */
+    display: none; /* change display type to view popup window */
+    /* display: flex; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: flex-start;
+    background-color: white;
+    box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
+    min-width: 500px;
+    height: 400px;
+    padding: 30px;
+    border-radius: 5px;
 }
-/*
-CSS effects:
-Form box-shadow: box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-- Save button box-shadow: box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
-*/
+#form-main-header{
+    font-family: 'Rubik', sans-serif;
+    color: #E34E45;
+    font-size: 2em;
+    font-weight: 700;
+}
+#form-sub-header{
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+.input{
+    font-family: 'Rubik', sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #CCC 1px;
+    color: black
+}
+#name-input{
+
+}
+#phone-number-input{
+
+}
+#guest-number-input{
+
+}
+#save-button{
+    color: white;
+    background-color: #008000;
+    box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
+    height: 1.5em;
+}
+.available{
+    background-color: #CCC;
+    color: #ADAAAA;
+}
+.reserved{
+    background-color: #ADAAAA;
+    color: #CCC;
+}
