@@ -6,7 +6,8 @@
     <title>jQuery Lab pt1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS Reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
 <body>
@@ -17,22 +18,22 @@
 
     <div id="table-box">
         <div class="row">
-            <div class = "circle">1</div>
-            <div class = "circle">2</div>
-            <div class = "circle">3</div>
+            <div class = "circle reserved">1</div>
+            <div class = "circle available">2</div>
+            <div class = "circle available">3</div>
         </div>
         <div class="row">
-            <div class = "circle">4</div>
-            <div class = "circle">5</div>
-            <div class = "circle">6</div>
+            <div class = "circle available">4</div>
+            <div class = "circle available">5</div>
+            <div class = "circle available">6</div>
         </div>
         <div class="row">
-            <div class = "circle">7</div>
-            <div class = "circle">8</div>
-            <div class = "circle">9</div>
+            <div class = "circle available">7</div>
+            <div class = "circle available">8</div>
+            <div class = "circle available">9</div>
         </div>
     </div>
-    <form id="form">
+    <form id="form" class="hidden">
         <h1 id="form-main-header">New Reservation</h1>
         <h2 id="form-sub-header">Table Number: __</h2>
         <input class="input" id="name-input" type="text" placeholder="Your Name"/>
@@ -50,7 +51,8 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
-        <input class="input" id="save-button" type="submit" value="Save"> 
+        <input class="input" id="save-button" type="submit" value="Save">
+        <i id="x" class="material-icons">close</i>
     </form>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

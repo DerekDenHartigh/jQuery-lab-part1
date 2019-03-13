@@ -1,10 +1,11 @@
 #not-a-selector{
     color:#ADAAAA;
-    
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto Mono', monospace;
 }
 *{ /* IDK why this doesn't affect my classes - perhaps my css reset has a higher specificity default font? */
     font-family: 'Roboto Mono', monospace;
-    Font-weight: normal, 700;
+    font-weight: normal;
 }
 
 body{
@@ -62,21 +63,20 @@ body{
 }
 .circle{
     font-family: 'Roboto Mono', monospace;
-    font-weight: normal, 700;
+    font-weight: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #CCC;
+    /* background-color: #CCC; */
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    color: #ADAAAA;
+    /* color: #ADAAAA; */
     margin: 10px;
     /* z-index: 2; */
 }
 #form{
-    display: none; /* change display type to view popup window */
-    /* display: flex; */
+    /* display:flex or none determined by class addition/subtraction */
     position: absolute;
     left: 50%;
     top: 50%;
@@ -99,12 +99,12 @@ body{
     font-weight: 700;
 }
 #form-sub-header{
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-weight: normal;
     font-size: 1.5em;
 }
 .input{
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-weight: normal;
     font-size: 1.5em;
     border-top: none;
@@ -128,6 +128,12 @@ body{
     box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.3);
     height: 1.5em;
 }
+#x{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ADAAAA;
+}
 .available{
     background-color: #CCC;
     color: #ADAAAA;
@@ -135,4 +141,10 @@ body{
 .reserved{
     background-color: #ADAAAA;
     color: #CCC;
+}
+.hidden{
+    display: none;
+}
+.revealed{
+    display: flex;
 }
