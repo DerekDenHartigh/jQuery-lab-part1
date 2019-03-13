@@ -62,7 +62,7 @@ body{
 }
 .circle{
     font-family: 'Roboto Mono', monospace;
-    Font-weight: normal, 700;
+    font-weight: normal, 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,6 +72,7 @@ body{
     border-radius: 50%;
     color: #ADAAAA;
     margin: 10px;
+    /* z-index: 2; */
 }
 #form{
     display: none; /* change display type to view popup window */
@@ -89,6 +90,7 @@ body{
     height: 400px;
     padding: 30px;
     border-radius: 5px;
+    /* z-index: 3; */
 }
 #form-main-header{
     font-family: 'Rubik', sans-serif;
