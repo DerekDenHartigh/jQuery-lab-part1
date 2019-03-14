@@ -16,8 +16,8 @@ is changed from “available” to “reserved”.
 6. Changes the appearance of an open table when the mouse moves over the table, as
 well as changes the cursor.
 */
-
-$(document).ready(function() {
+$(()=>{ // which do I use?
+$(document).ready(function() { // which do I use?
 
     $(".circle").hover(
         function(){
@@ -31,27 +31,29 @@ $(document).ready(function() {
         }
     );  // for UX
 
-// console.log($('.circle').hasClass('reserved')) // returns boolean true/false
+console.log($('.circle').hasClass('available')) // returns boolean true - conditional below should pass
 
     $(".circle").on('click', ()=>{
         if($('.circle').hasClass('available')===true){
-            $(this).removeClass('available');
-            $(this).addClass('reserved');
+            $(this).removeClass('available');  // not working
+            $(this).addClass('reserved'); // not working
             $('#form').removeClass('hidden');
             $('#form').addClass('revealed');
             return;
         }
-        else {alert("something aint working here!")};
+        else {alert("something aint working here!")};  // stopped doing this
     });
 
     $('#x').hover(
         function(){
             $(this).css("cursor", "pointer");
             $(this).css("color", "black");
+            $(this).css("background-color", ' #EEE')
         },  
         function(){
             $(this).css("cursor", 'default');
             $(this).css("color", "#ADAAAA");
+            $(this).css("background-color", 'white')
         });
 
     $('#save-button').hover(
@@ -75,6 +77,7 @@ $(document).ready(function() {
         $('#form').removeClass('revealed');
         $('#form').addClass('hidden');
     });
+});
 });
 
 /*
