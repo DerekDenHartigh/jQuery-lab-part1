@@ -15,10 +15,14 @@ Build Specifications:
     5. Change the cursor property to “not-allowed” if the table has a “reserved” class.
     6. Changes the appearance of an open table when the mouse moves over the table, as
     well as changes the cursor.
-    */
+*/
+
 $(()=>{ // which do I use?
 $(document).ready(function() { // which do I use?
     let mostRecentlyClickedCircleNumber;
+    let tableNumber1, tableNumber2, tableNumber3; // initializing these to store table reservation data
+    let tableNumber4, tableNumber5, tableNumber6;
+    let tableNumber7, tableNumber8, tableNumber9;
     $(".circle").hover(
         function(){
             if($(this).hasClass('available')){
@@ -51,7 +55,7 @@ $(document).ready(function() { // which do I use?
             return mostRecentlyClickedCircleNumber;
         }
         else {alert("something aint right here!");
-        console.error("Err...Rrr..0000RRR...");  // error message if something goes awry.
+        console.error("Err...Rrr..0000RRR...");
         }
     });
 
@@ -79,13 +83,12 @@ $(document).ready(function() { // which do I use?
             $(this).css("border", "none");
         });
 
-    $("#x").on('click', function(event){
+    $("#x").on('click', function(){
             $("#form")[0].reset("#form");
             $('#form').removeClass('revealed');
             $('#form').addClass('hidden');
-            console.log(mostRecentlyClickedCircleNumber);  // planning on using this to target circle that triggered the form
-            $("#"+mostRecentlyClickedCircleNumber).removeClass('reserved');  // not working - not sure how to target the selected circle
-            $("#"+mostRecentlyClickedCircleNumber).addClass('available'); // not working
+            $("#"+mostRecentlyClickedCircleNumber).removeClass('reserved');
+            $("#"+mostRecentlyClickedCircleNumber).addClass('available');
         });
 
     // $("#save-button").on('click', ()=>{ // trying below to make conditional for if form isn't filled out
@@ -101,10 +104,38 @@ $(document).ready(function() { // which do I use?
     //     }
 
     $("#save-button").on('click', ()=>{
+        let nameValue = $("#name-input")[0].value; // these are the field values, will use them for conditionals
+        let phoneNumberValue = $("#phone-number-input")[0].value;
+        let guestNumberValue = $("#guest-number-input")[0].value;
+        let formObj = {
+            "name": nameValue,
+            "phoneNumber": phoneNumberValue,
+            "numberOfGuests": guestNumberValue
+        };
+
+        if(nameValue==="" || phoneNumberValue==="" || guestNumberValue===0 || $("#form")[0].checkValidity()===false){ // could probably just use check validity.
+            console.error("ERROR! either a field is empty or you've not specified your guest #")
+            alert("Please complete the form")
+            return;
+        }
+        else if(nameValue!=="" && phoneNumberValue!=="" && guestNumberValue!==0 && $("#form")[0].checkValidity()===true) {
             alert("Your table has been reserved!")
             $("#form")[0].reset("#form");
             $('#form').removeClass('revealed');
             $('#form').addClass('hidden');
+            switch(mostRecentlyClickedCircleNumber){
+                case "1": tableNumber1 = formObj; return tableNumber1;
+                case "2": tableNumber2 = formObj; return tableNumber2;
+                case "3": tableNumber3 = formObj; return tableNumber3;
+                case "4": tableNumber4 = formObj; return tableNumber4;
+                case "5": tableNumber5 = formObj; return tableNumber5;
+                case "6": tableNumber6 = formObj; return tableNumber6;
+                case "7": tableNumber7 = formObj; return tableNumber7;
+                case "8": tableNumber8 = formObj; return tableNumber8;
+                case "9": tableNumber9 = formObj; return tableNumber9;
+                default: console.error("What did you click?"); return;
+            };
+        }
         });
         /*
         I'm getting "An invalid form control with name='' or name='phone' is not focusable." 
@@ -117,9 +148,9 @@ $(document).ready(function() { // which do I use?
         which is a requirement of this assignment so..
         */
         
-        $(document).on('submit', '#form', function(event) {
-            event.preventDefault();
-            alert('page did not refresh');
-        });
+        // $(document).on('submit', '#form', function(event) {
+        //     event.preventDefault();
+        //     alert('page did not refresh');
+        // });
     });
 });
