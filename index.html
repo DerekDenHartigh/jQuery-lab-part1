@@ -18,28 +18,28 @@
 
     <div id="table-box">
         <div class="row">
-            <div class = "circle available">1</div>
-            <div class = "circle available">2</div>
-            <div class = "circle available">3</div>
+            <div id="1" class = "circle available">1</div>
+            <div id="2" class = "circle available">2</div>
+            <div id="3" class = "circle available">3</div>
         </div>
         <div class="row">
-            <div class = "circle available">4</div>
-            <div class = "circle available">5</div>
-            <div class = "circle available">6</div>
+            <div id="4" class = "circle available">4</div>
+            <div id="5" class = "circle available">5</div>
+            <div id="6" class = "circle available">6</div>
         </div>
         <div class="row">
-            <div class = "circle available">7</div>
-            <div class = "circle available">8</div>
-            <div class = "circle available">9</div>
+            <div id="7" class = "circle available">7</div>
+            <div id="8" class = "circle available">8</div>
+            <div id="9" class = "circle available">9</div>
         </div>
     </div>
     <form id="form" class="hidden">
         <h1 id="form-main-header">New Reservation</h1>
         <h2 id="form-sub-header">Table Number: __</h2>
-        <input class="input" id="name-input" type="text" placeholder="Your Name"/>
-        <input class="input" id="phone-number-input" type="number" placeholder="555-555-5555" maxlength="12"/>
-        <select class="input" id="guest-number-input">
-            <option value="1">Select your number of guests</option>
+        <input class="input" id="name-input" type="text" placeholder="Your Name" minlength="2"  required>
+        <input class="input" id="phone-number-input" placeholder="555-555-5555" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <select class="input" id="guest-number-input" required>
+            <option value="0">Select number of guests</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -54,7 +54,6 @@
         <input class="input" id="save-button" type="submit" value="Save">
         <i id="x" class="material-icons">close</i>
     </form>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </body>
